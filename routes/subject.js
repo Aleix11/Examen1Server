@@ -37,4 +37,8 @@ router.get('/api/editStudiesSubject/:subjectStudies',subject.findByStudies);
 //get students
 router.get('/api/editQuadriSubject/:subjectQuadri',subject.findByQuadri);
 
+//GET REQUESTS -- SORT
+//get students
+router.get('/api/sortTodos',subject.listSortSubject);
+
 module.exports=router;

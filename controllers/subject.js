@@ -35,6 +35,14 @@ exports.findByQuadri = function(req, res) {
     });
 };
 
+exports.listSortSubject = function(req, res) {
+    Subject.find({}, null, {sort: { name: 1 }}).populate('studentId').exec(function (err, subject) {
+        if (err)
+            res.send(err);
+        res.json(subject);
+    });
+};
+
 //insert methods
 exports.insertSubject= function(req, res) {
     var newSubject = new Subject(req.body);
